@@ -28,7 +28,7 @@
 		alpha: true
 	});
 	renderer.setClearColor(new THREE.Color('lightgrey'), 0)
-	renderer.setSize( 1640, 1200 );
+	renderer.setSize( 160, 120 );
 	renderer.domElement.style.position = 'absolute'
 	renderer.domElement.style.top = '0px'
 	renderer.domElement.style.left = '0px'
@@ -192,7 +192,7 @@
 		lineMesh.computeLineDistances();
 
 		var length = markerRoot1.position.distanceTo(markerRoot2.position)
-		lineMesh.material.scale = length * 100
+		lineMesh.material.scale = length * 10
 		lineMesh.material.needsUpdate = true
 	})
 
@@ -203,8 +203,8 @@
 
 	// build texture
 	var canvas = document.createElement( 'canvas' );
-	canvas.width = 1200;
-	canvas.height = 600;
+	canvas.width = 320;
+	canvas.height = 240;
 	var context = canvas.getContext( '2d' );
 	var texture = new THREE.CanvasTexture( canvas );
 
@@ -227,7 +227,7 @@
 		var text = length.toFixed(2)
 
 		// put the text in the sprite
-		context.font = '40px monospace';
+		context.font = '80px monospace';
 		context.clearRect( 0, 0, canvas.width, canvas.height );
 		context.fillStyle = '#ff0000';
 		context.fillText(text, canvas.width/4, 3*canvas.height/4 )
