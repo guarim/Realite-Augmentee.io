@@ -192,7 +192,7 @@
 		lineMesh.computeLineDistances();
 
 		var length = markerRoot1.position.distanceTo(markerRoot2.position)
-		lineMesh.material.scale = length * 254
+		lineMesh.material.scale = length * 1
 		lineMesh.material.needsUpdate = true
 	})
 
@@ -203,8 +203,8 @@
 
 	// build texture
 	var canvas = document.createElement( 'canvas' );
-	canvas.width = 128;
-	canvas.height = 64;
+	canvas.width = 1200;
+	canvas.height = 600;
 	var context = canvas.getContext( '2d' );
 	var texture = new THREE.CanvasTexture( canvas );
 
@@ -229,7 +229,7 @@
 		// put the text in the sprite
 		context.font = '40px monospace';
 		context.clearRect( 0, 0, canvas.width, canvas.height );
-		context.fillStyle = '#fff';
+		context.fillStyle = '#ff0000';
 		context.fillText(text, canvas.width/4, 3*canvas.height/4 )
 		sprite.material.map.needsUpdate = true
 	})
